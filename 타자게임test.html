@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width:750px;
+            height:550px;
+            background: yellow;
+            margin: auto;
+        }
+        #side{
+            width:150px;
+            height:550px;
+            background: pink;
+            float:left;          
+            text-align: center;  
+        }
+        #content{
+            width:600px;
+            height:550px;
+            background: salmon;
+            float: left;
+        }
+        #score{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #side input{
+            width:90%;
+            height:45px;
+            margin-top: 10px;
+        }
+        #side button{
+            width:94%;
+            height:25px;
+            margin-top: 10px;
+        }
+        #hp{
+            background: greenyellow;
+            width:140px;
+            height:150px;
+            margin: auto;
+            margin-top:10px;
+            position: relative; /* 자식때문에 */            
+        }
+    </style>
+    <script>
+
+        function getRandomWithRange(min , max){
+            let result = min + ((max+1) - min)*Math.random();
+            result = parseInt(result);
+            return result;
+        }
+
+    </script>
+    <script>
+        let hp;
+        let size=35;
+        let hpArray=[];
+        
+        let word=["광화문","솔로몬","제주도","토성","감기","무지개","키보드","사탕","자존심","드마라"];
+
+        function createHp(){
+            for(let i=0;i<4;i++){
+                for(let a=0;a<3;a++){
+                    let box = document.createElement("div");
+                    box.style.width=size+"px";
+                    box.style.height=size+"px";
+                    box.style.background="red";
+                    box.style.position="absolute";
+                    box.style.left=20+a*size+"px";
+                    box.style.top=5+i*size+"px";
+                    box.style.border="1px solid black";
+                    box.style.boxSizing="border-box";
+        
+                    hp.appendChild(box);
+                    hpArray.push(box);
+                }
+            }            
+        }
+
+        function init(){
+            hp=document.getElementById("hp");
+        }
+        
+        addEventListener("load", function(){
+            init();
+            createHp();
+            createWord();
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="side">
+            <div id="score">50 점</div>
+            <div id="hp"></div>
+            <input type="text">
+            <button>Start</button>
+        </div>
+        <div id="content"></div>
+    </div>
+
+</body>
+</html>

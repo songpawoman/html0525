@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width:750px;
+            height:550px;
+            background: yellow;
+            margin: auto;
+        }
+        #side{
+            width:150px;
+            height:550px;
+            background: pink;
+            float:left;          
+            text-align: center;  
+        }
+        #content{
+            width:600px;
+            height:550px;
+            background: salmon;
+            float: left;
+        }
+        #score{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #side input{
+            width:90%;
+            height:45px;
+            margin-top: 10px;
+        }
+        #side button{
+            width:94%;
+            height:25px;
+            margin-top: 10px;
+        }
+        #hp{
+            background: greenyellow;
+            width:140px;
+            height:150px;
+            margin: auto;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="side">
+            <div id="score">50 점</div>
+            <div id="hp"></div>
+            <input type="text">
+            <button>Start</button>
+        </div>
+        <div id="content"></div>
+    </div>
+
+</body>
+</html>
